@@ -1,0 +1,30 @@
+git config --global user.name
+git config --global user.email
+git config --global core.editor
+
+#setting an existing repository
+git clone https://github.com/gabrielebisogno/maven-quick-start
+cd (path folder) git status
+cd (path folder) git add pom.xml or git add .
+cd (path folder) git commit -m "add pom.xml file to project"
+cd (path folder) git log
+touch src/test/resources/.gitkeep	#usato per aggiungere path alla git repository
+cd (path folder) git add .	#aggiunge tutto quello presente nella path
+git push -f origin master	#update git repository online
+git remote -v
+git push origin master
+
+#connect local repo with remote repo
+git remote add origin <remote_repo_url>
+git push --all origin
+
+#maven different lifecycle
+mvn package 	#create target folder/jar file
+mvn clean	#remove target folder
+mvn clean package	#ensure that we have deleted all the previuos build before create 			another one. 
+mvn clean install
+mvn clean compile	#richiama tutte le dependencies, queindi compila anche tutte 				quelle librerie usate dal src code
+mvn dependency:tree > dependency-list.txt	#salva l'albero dipendence in file di txt
+
+#setting maven pom.xml file and other 
+mvn archetype:generate
